@@ -1,0 +1,24 @@
+stockholms/
+│
+├── app.js
+├── package.json
+├── users.json
+│
+├── routes/
+│   ├── auth.js
+│   └── predict.js
+│
+├── services/
+│   ├── finnhub.js
+│   └── indicators.js
+│
+├── ml/
+│   └── predict.py
+│
+├── views/
+│   ├── login.ejs
+│   ├── home.ejs
+│   └── predict.ejs
+│
+└── public/
+    └── styles.css
