@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stockholms | Predict</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<%- include("partials/header") %>
+
+<div class="page">
+  <div class="container"></div>
+  <div class="card">
+    <h2>📈 Stock Prediction</h2>
+    <form method="POST">
+      <input name="stock" placeholder="AAPL / TSLA / INFY" required>
+      <button>Predict</button>
+    </form>
+  </div>
+
+  <% if (typeof error !== "undefined" && error) { %>
+    <div class="card">
+      <p class="sell"><%= error %></p>
+    </div>
+  <% } %>
+
+  <% if (typeof prediction !== "undefined") { %>
+    <div class="card">
+      <h3><%= stock %></h3>
+      <p>Current Price: $ <%= current %></p>
+      <p>Predicted Price: $ <%= prediction %></p>
+
+      <h3 class="<%= signal.toLowerCase() %>"><%= signal %></h3>
+
+      <p>Stop Loss: $ <%= stopLoss %></p>
+      <p>Take Profit: $ <%= takeProfit %></p>
+    </div>
+
+    <div class="card">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <script>
+      new Chart(chart, {
+        type: "line",
+        data: {
+          labels: [...Array(<%= chartData.length %>).keys()],
+          datasets: [{
+            data: <%- JSON.stringify(chartData) %>,
+            borderColor: "#00ff99",
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true
+        }
+      });
+    </script>
+  <% } %>
+
+</div>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

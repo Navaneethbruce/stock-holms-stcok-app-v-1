@@ -1,0 +1,29 @@
+<div class="navbar">
+  <div><strong>📊 Stockholms</strong></div>
+  <div>
+    <a href="/home">Home</a>
+    <a href="/predict">Predict</a>
+    <a href="/about">About</a>
+    <a href="/account">Account</a>
+    <a href="/logout" style="color:#ff4d4d;">Logout</a>
+  </div>
+</div>
+
+<div class="marquee">
+  <span>📈 Live Markets • AI Predictions • Buy Smart • Trade Safer • Stockholms</span>
+</div>
+
+<script>
+  document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("/")) {
+        e.preventDefault();
+        document.body.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = href;
+        }, 200);
+      }
+    });
+  });
+</script>

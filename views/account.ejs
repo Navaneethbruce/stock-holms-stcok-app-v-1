@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account | Stockholms</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<%- include("partials/header") %>
+
+<div class="page">
+  <div class="container">
+
+    <div class="card">
+      <h2>👤 Account</h2>
+      <p><strong>Username:</strong> <%= user.username %></p>
+      <p>Status: Logged In</p>
+    </div>
+
+    <div class="card">
+      <a href="/logout">
+        <button style="background:#ff4d4d;color:white;">Logout</button>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

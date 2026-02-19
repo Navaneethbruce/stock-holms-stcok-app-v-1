@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About | Stockholms</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<%- include("partials/header") %>
+
+<div class="page">
+  <div class="container">
+
+
+  <!-- HERO SECTION -->
+  <div class="card" style="text-align:center;">
+    <h1>About Stockholms</h1>
+    <p style="color:var(--muted); margin-top:10px;">
+      AI-powered stock analysis for smarter trading decisions
+    </p>
+  </div>
+
+  <!-- MOVING TEXT / HIGHLIGHT -->
+  <div class="card" style="overflow:hidden;">
+    <div style="
+      white-space: nowrap;
+      animation: aboutScroll 18s linear infinite;
+      color: var(--accent);
+      font-weight: 500;">
+      🚀 Built with Node.js • Python • Machine Learning • Real-time APIs • Full-Stack Engineering
+    </div>
+  </div>
+
+  <!-- WHAT IS STOCKHOLMS -->
+  <div class="card">
+    <h2>📊 What is Stockholms?</h2>
+    <p>
+      Stockholms is a full-stack AI stock prediction and analysis platform
+      designed to help traders and learners understand market movements
+      using machine learning and technical indicators.
+    </p>
+    <p>
+      It combines a modern web interface with a Python-based prediction
+      engine, making it both educational and practical.
+    </p>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="card">
+    <h2>✨ Key Features</h2>
+    <ul style="line-height:1.8;">
+      <li>📈 Live stock prices using real market APIs</li>
+      <li>🤖 Machine Learning price prediction engine</li>
+      <li>🟢 BUY / 🔴 SELL / 🟠 HOLD trade signals</li>
+      <li>📉 Risk management with Stop-Loss & Take-Profit</li>
+      <li>🎨 Modern, responsive trading dashboard UI</li>
+    </ul>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="card">
+    <h2>🛠️ Technology Stack</h2>
+    <ul style="line-height:1.8;">
+      <li>Frontend: EJS, HTML, CSS, Chart.js</li>
+      <li>Backend: Node.js, Express</li>
+      <li>Machine Learning: Python, TensorFlow (LSTM)</li>
+      <li>APIs: Real-time stock market data</li>
+    </ul>
+  </div>
+
+  <!-- DEVELOPER SECTION -->
+  <div class="card" style="text-align:center;">
+    <h2>👨‍💻 Developer</h2>
+    <p>
+      This project was designed and developed by <strong>Navaneeth , Ashwail & Manojna </strong>
+      as a hands-on exploration of full-stack development and AI-based
+      financial systems.
+    </p>
+    <p style="color:var(--muted); margin-top:10px;">
+      Built for learning, experimentation, and showcasing real-world skills.
+    </p>
+  </div>
+
+</div>
+
+<%- include("partials/footer") %>
+
+<!-- PAGE-SPECIFIC ANIMATION -->
+<style>
+@keyframes aboutScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+</body>
+</html>

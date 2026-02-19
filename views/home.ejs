@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stockholms | Home</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<%- include("partials/header") %>
+
+<div class="page">
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="card" style="text-align:center;">
+      <h1>📊 Welcome to Stockholms</h1>
+      <p style="color:var(--muted);">
+        AI-powered insights • Smarter trades • Better decisions
+      </p>
+    </div>
+
+    <!-- MARKET SNAPSHOT CARDS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+      <div class="card">
+        <h3>NIFTY 50</h3>
+        <p style="color:var(--accent);font-size:22px;">22,450</p>
+        <p class="buy">▲ +0.85%</p>
+      </div>
+
+      <div class="card">
+        <h3>SENSEX</h3>
+        <p style="color:var(--accent);font-size:22px;">74,120</p>
+        <p class="buy">▲ +0.72%</p>
+      </div>
+
+      <div class="card">
+        <h3>BANK NIFTY</h3>
+        <p style="color:var(--warning);font-size:22px;">48,320</p>
+        <p class="hold">● Sideways</p>
+      </div>
+
+      <div class="card">
+        <h3>Market Sentiment</h3>
+        <p class="buy" style="font-size:20px;">Bullish 🟢</p>
+        <p style="color:var(--muted);">Based on indicators</p>
+      </div>
+    </div>
+
+    <!-- MARKET TREND CHART -->
+    <div class="card">
+      <h2>📈 Market Trend</h2>
+      <canvas id="marketChart"></canvas>
+    </div>
+
+    <!-- AI INSIGHTS -->
+    <div class="card">
+      <h2>🤖 AI Insights</h2>
+      <ul style="line-height:1.9;">
+        <li>🔹 Momentum indicators show strength in IT & Banking</li>
+        <li>🔹 Volatility is moderate — suitable for swing trades</li>
+        <li>🔹 AI models suggest higher probability of upside moves</li>
+      </ul>
+    </div>
+
+    <!-- NEWS SECTION -->
+    <div class="card">
+      <h2>📰 Market News</h2>
+
+      <div style="margin-bottom:15px;">
+        <p><strong>🔸 Markets end higher amid global cues</strong></p>
+        <p style="color:var(--muted);font-size:14px;">
+          Indian equities closed in green as IT and banking stocks gained momentum.
+        </p>
+      </div>
+
+      <div style="margin-bottom:15px;">
+        <p><strong>🔸 IT stocks rally on US tech optimism</strong></p>
+        <p style="color:var(--muted);font-size:14px;">
+          Major IT stocks saw buying interest after positive global tech signals.
+        </p>
+      </div>
+
+      <div>
+        <p><strong>🔸 RBI policy keeps rates unchanged</strong></p>
+        <p style="color:var(--muted);font-size:14px;">
+          Central bank maintains stance, markets react positively.
+        </p>
+      </div>
+    </div>
+
+    <!-- CALL TO ACTION -->
+    <div class="card" style="text-align:center;">
+      <h2>🚀 Ready to Predict?</h2>
+      <p style="color:var(--muted);">
+        Use AI models and indicators to generate buy/sell signals.
+      </p>
+      <a href="/predict">
+        <button>Go to Prediction</button>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<%- include("partials/footer") %>
+
+<script>
+new Chart(marketChart, {
+  type: "line",
+  data: {
+    labels: ["Mon","Tue","Wed","Thu","Fri"],
+    datasets: [{
+      label: "NIFTY 50",
+      data: [22100, 22240, 22310, 22280, 22450],
+      borderColor: "#00ff99",
+      backgroundColor: "rgba(0,255,153,0.15)",
+      tension: 0.4,
+      fill: true
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: { color: "#e6f1ff" }
+      }
+    },
+    scales: {
+      x: { ticks: { color: "#7f8fa6" } },
+      y: { ticks: { color: "#7f8fa6" } }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
